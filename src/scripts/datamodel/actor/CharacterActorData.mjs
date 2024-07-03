@@ -10,7 +10,7 @@ import {
 
 const { fields } = foundry.data;
 
-export class CharacterData extends CommonActorData {
+export default class CharacterData extends CommonActorData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
@@ -20,7 +20,7 @@ export class CharacterData extends CommonActorData {
       // class is a reserved word
       characterClass: new fields.SchemaField({
         img: makeImageField(
-          "systems/lhtrpg/assets/ui/classes/Enchanter_Logo.png",
+          "systems/lhtrpg/assets/ui/classes/Guardian_Logo.png",
         ),
         name: new fields.StringField({
           initial: "guardian",
@@ -45,10 +45,10 @@ export class CharacterData extends CommonActorData {
         subclass: makeArrayStringField(),
       }),
       inventory: new fields.SchemaField({
-        space: new fields.SchemaField(),
+        space: new fields.NumberField(),
         gold: makePositiveIntegerField(350),
       }),
-      equipment: new fields.SchemaField(),
+      equipment: new fields.NumberField(),
     };
   }
 
@@ -56,7 +56,7 @@ export class CharacterData extends CommonActorData {
     return {
       level: makePositiveIntegerField(1),
       race: new fields.StringField({
-        initial: "guardian",
+        initial: "human",
         blank: false,
         nullable: false,
         trim: true,
@@ -77,12 +77,58 @@ export class CharacterData extends CommonActorData {
 
   static getAdditionalStatsField() {
     return {
-      hate: makePositiveIntegerField(),
+      hate: new fields.NumberField(),
     };
   }
 
   prepareBaseData() {
     const { infos, stats, characterClass, inventory } = this;
+    const { health, fate, base } = stats;
+    const { str, dex, pow, int } = base;
+
+    this._prepareStatsData();
+
+    // Constant
+
+    inventory.space = 2;
+
+    super.prepareBaseData();
+  }
+
+  prepareDerivedData() {
+    const { stats, equipment } = this;
+    const { base, attribute, power, defense, initiative } = stats;
+    const { str, dex, pow, int } = base;
+    const { evasion, resistance } = attribute;
+
+    for (const key in base) {
+      const attribute = base[key];
+      calculateTotal(attribute);
+      attribute.mod = Math.floor(attribute.total / 3) ?? 0;
+    }
+
+    // Derive from base mod
+    evasion.mod.base = dex.mod;
+
+    resistance.mod.base = pow.mod;
+
+    initiative.base = str.mod + int.mod;
+
+    defense.physical.base = str.mod * 2;
+
+    defense.magical.base = int.mod * 2;
+
+    // case 4: Unarmed
+    if (equipment.hand.length === 0) {
+      power.attack.base = str.mod;
+      power.magic.base = int.mod;
+    }
+
+    super.prepareDerivedData();
+  }
+
+  _prepareStatsData() {
+    const { infos, stats, characterClass } = this;
     const { health, fate, base } = stats;
     const { str, dex, pow, int } = base;
 
@@ -234,52 +280,14 @@ export class CharacterData extends CommonActorData {
     }
 
     /* For each increase in Character Rank
-      So Character Rank 1 doesn't count
-    */
-    rankBonus = Math.max(infos.rank - 1, 0);
+          So Character Rank 1 doesn't count
+        */
+    let rankBonus = Math.max(infos.rank - 1, 0);
 
     for (const key in base) {
       base[key].rank = rankBonus;
     }
 
     health.rank = healthModifier * rankBonus;
-
-    // Constant
-
-    inventory.space.base = 2;
-
-    super.prepareBaseData();
-  }
-
-  prepareDerivedData() {
-    const { stats, equipment } = this;
-    const { base, attribute, power, defense, initiative } = stats;
-    const { str, dex, pow, int } = base;
-    const { evasion, resistance } = attribute;
-
-    for (const key in base) {
-      const attribute = base[key];
-      calculateTotal(attribute);
-      attribute.mod = Math.floor(attribute.total / 3) ?? 0;
-    }
-
-    // Derive from base mod
-    evasion.mod.base = dex.mod;
-
-    resistance.mod.base = pow.mod;
-
-    initiative.base = str.mod + int.mod;
-
-    defense.physical.base = str.mod * 2;
-
-    defense.magical.base = int.mod * 2;
-
-    // case 4: Unarmed
-    if (equipment.hand.length === 0) {
-      power.attack.base = str.mod;
-      power.magic.base = int.mod;
-    }
-
-    super.prepareDerivedData();
   }
 }

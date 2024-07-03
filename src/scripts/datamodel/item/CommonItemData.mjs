@@ -2,7 +2,7 @@ import { makePositiveIntegerField, getCommonInfosField } from "../common.mjs";
 
 const { fields } = foundry.data;
 
-export class CommonItemData extends foundry.abstract.TypeDataModel {
+export default class CommonItemData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
       infos: new fields.SchemaField({

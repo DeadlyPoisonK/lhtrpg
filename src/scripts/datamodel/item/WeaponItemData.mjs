@@ -4,7 +4,7 @@ import { makeBooleanField } from "../common.mjs";
 
 const { fields } = foundry.data;
 
-export class WeaponItemData extends StatsItemData {
+export default class WeaponItemData extends StatsItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),

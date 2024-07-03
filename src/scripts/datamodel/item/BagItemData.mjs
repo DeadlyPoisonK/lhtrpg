@@ -6,7 +6,7 @@ import {
   makeStringField,
 } from "../common.mjs";
 
-export class BagItemData extends CommonItemData {
+export default class BagItemData extends CommonItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),

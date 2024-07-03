@@ -1,0 +1,1 @@
+Put your custom classes here, they'll be automatically imported in the character initializator. You can use the jsons of the official classes in the classes as examples on how to build a custom class json.

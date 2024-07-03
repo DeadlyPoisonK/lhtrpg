@@ -5,6 +5,9 @@ import {
   getCommonInfosField,
   prepareModelData,
   calculateTotal,
+  makeArrayStringField,
+  makeHtmlField,
+  makeStringField,
 } from "../common.mjs";
 
 const { fields } = foundry.data;
@@ -13,15 +16,46 @@ export class CommonActorData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
       infos: new fields.SchemaField({
-        ...getCommonInfosField(),
+        rank: makePositiveIntegerField(1),
+        tags: makeArrayStringField(),
+        description: makeHtmlField(),
         ...this.getAdditionalInfosField(),
       }),
       stats: new fields.SchemaField({
         health: new fields.SchemaField({
-          value: makePositiveIntegerField(),
+          value: new fields.NumberField({
+            nullable: false,
+            integer: true,
+            min: 0,
+            initial: 0,
+          }),
+          max: new fields.NumberField({
+            nullable: true,
+            integer: true,
+            min: 0,
+            initial: null,
+          }),
+          barrier: new fields.NumberField({
+            nullable: true,
+            integer: true,
+            min: 0,
+            initial: null,
+            label: "LHTRPG.Label.Barrier",
+          }),
         }),
         fate: new fields.SchemaField({
-          value: makePositiveIntegerField(),
+          value: new fields.NumberField({
+            nullable: false,
+            integer: true,
+            min: 0,
+            initial: 0,
+          }),
+          max: new fields.NumberField({
+            nullable: false,
+            integer: true,
+            min: 0,
+            initial: 0,
+          }),
         }),
         base: new fields.SchemaField({
           str: this.makeBaseStatsField(),
@@ -43,16 +77,16 @@ export class CommonActorData extends foundry.abstract.TypeDataModel {
           resistance: this.makeAttributeField(),
         }),
         power: new fields.SchemaField({
-          attack: new fields.SchemaField(),
-          magic: new fields.SchemaField(),
-          recovery: new fields.SchemaField(),
+          attack: new fields.NumberField(),
+          magic: new fields.NumberField(),
+          recovery: new fields.NumberField(),
         }),
         defense: new fields.SchemaField({
-          physical: this.makeField(),
-          magical: this.makeField(),
+          physical: new fields.NumberField(),
+          magical: new fields.NumberField(),
         }),
-        speed: this.makeField(),
-        initiative: this.makeField(),
+        speed: new fields.NumberField(),
+        initiative: new fields.NumberField(),
         ...this.getAdditionalStatsField(),
       }),
       status: new fields.SchemaField({
@@ -63,16 +97,15 @@ export class CommonActorData extends foundry.abstract.TypeDataModel {
           staggered: makeBooleanField(),
           afflicted: makeBooleanField(),
           overconfident: makeBooleanField(),
-          decay: makePositiveIntegerField(),
+          decay: new fields.NumberField(),
           pursuit: makeConditionField(),
         }),
         combat: new fields.SchemaField({
-          regen: makePositiveIntegerField(),
+          regen: new fields.NumberField(),
           cancel: makeConditionField(),
-          barrier: makePositiveIntegerField(),
         }),
         life: new fields.SchemaField({
-          fatigue: makePositiveIntegerField(),
+          fatigue: new fields.NumberField(),
           weakness: makeConditionField(),
         }),
         other: new fields.SchemaField({
@@ -96,7 +129,7 @@ export class CommonActorData extends foundry.abstract.TypeDataModel {
 
   static makeBaseStatsField() {
     return new fields.SchemaField({
-      bonus: makePositiveIntegerField(),
+      bonus: new fields.NumberField(),
     });
   }
 
@@ -112,8 +145,8 @@ export class CommonActorData extends foundry.abstract.TypeDataModel {
 
   static makeModField() {
     return new fields.SchemaField({
-      dice: new fields.SchemaField(),
-      mod: new fields.SchemaField(),
+      dice: new fields.NumberField(),
+      mod: new fields.NumberField(),
     });
   }
 
@@ -131,7 +164,7 @@ export class CommonActorData extends foundry.abstract.TypeDataModel {
     const { health, fate, attribute } = this.stats;
     for (const key in attribute) {
       const dice = attribute[key].dice;
-      dice.status = 0;
+      //   dice.status = 0;
     }
 
     prepareModelData(health);

@@ -1,0 +1,11 @@
+{
+  "id": "monk",
+  "name": "LHTRPG.Character.class.monk",
+  "iconPath": "systems/lhtrpg/assets/ui/classes/Monk_logo.png",
+  "hp": "55",
+  "hpMod": "9",
+  "str": "4",
+  "dex": "4",
+  "pow": "2",
+  "int": "0"
+}

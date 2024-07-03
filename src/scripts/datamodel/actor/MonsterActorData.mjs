@@ -4,7 +4,7 @@ import { makePositiveIntegerField, makeImageField } from "../common.mjs";
 
 const { fields } = foundry.data;
 
-export class MonsterActorData extends CommonActorData {
+export default class MonsterActorData extends CommonActorData {
   static defineSchema() {
     return {
       ...super.defineSchema(),

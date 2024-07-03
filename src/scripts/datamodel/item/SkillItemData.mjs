@@ -8,7 +8,7 @@ import {
 
 const { fields } = foundry.data;
 
-export class SkillItemData extends CommonItemData {
+export default class SkillItemData extends CommonItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),

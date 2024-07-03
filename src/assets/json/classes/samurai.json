@@ -1,0 +1,11 @@
+{
+  "id": "samurai",
+  "name": "LHTRPG.Character.class.samurai",
+  "iconPath": "systems/lhtrpg/assets/ui/classes/Samurai_logo.png",
+  "hp": "50",
+  "hpMod": "8",
+  "str": "4",
+  "dex": "2",
+  "pow": "2",
+  "int": "2"
+}

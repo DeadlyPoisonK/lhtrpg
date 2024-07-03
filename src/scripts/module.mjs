@@ -21,15 +21,16 @@ import HealRoll from "./roll/HealRoll.mjs";
 import AttributeRoll from "./roll/AttributeRoll.mjs";
 import AccuracyRoll from "./roll/AccuracyRoll.mjs";
 
-import CharacterActorData from "./scripts/datamodel/actor/CharacterActorData.mjs";
-import MonsterActorData from "./scripts/datamodel/actor/MonsterActorData.mjs";
+import CharacterActorData from "./datamodel/actor/CharacterActorData.mjs";
+import MonsterActorData from "./datamodel/actor/MonsterActorData.mjs";
 
-import WeaponItemData from "./scripts/datamodel/item/WeaponItemData.mjs";
-import BagItemData from "./scripts/datamodel/item/BagItemData.mjs";
-import SkillItemData from "./scripts/datamodel/item/SkillItemData.mjs";
-import ConsumableItemData from "./scripts/datamodel/item/ConsumableItemData.mjs";
-import StatsItemData from "./scripts/datamodel/item/StatsItemData.mjs";
-import SocialItemData from "./scripts/datamodel/item/SocialItemData.mjs";
+import CommonItemData from "./datamodel/item/CommonItemData.mjs";
+import WeaponItemData from "./datamodel/item/WeaponItemData.mjs";
+import BagItemData from "./datamodel/item/BagItemData.mjs";
+import SkillItemData from "./datamodel/item/SkillItemData.mjs";
+import ConsumableItemData from "./datamodel/item/ConsumableItemData.mjs";
+import StatsItemData from "./datamodel/item/StatsItemData.mjs";
+import SocialItemData from "./datamodel/item/SocialItemData.mjs";
 
 import { LHTRPG } from "./helpers/config.mjs";
 

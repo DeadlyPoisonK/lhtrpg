@@ -8,9 +8,9 @@
       <div class="hp-gauge flexrow">
         <input
           class="hp-input current"
-          name="system.health.value"
+          name="system.stats.health.value"
           type="text"
-          value="{{system.health.value}}"
+          value="{{system.stats.health.value}}"
           placeholder="0"
           data-dtype="Number"
           maxlength="3"
@@ -18,9 +18,9 @@
         <span>/</span>
         <input
           class="hp-input max"
-          name="system.health.max"
+          name="system.stats.health.max"
           type="text"
-          value="{{system.health.max}}"
+          value="{{system.stats.health.max}}"
           placeholder="0"
           data-dtype="Number"
           maxlength="3"
@@ -32,9 +32,9 @@
       <div class="fate-gauge flexrow">
         <input
           class="fate-input"
-          name="system.fate.value"
+          name="system.stats.fate.value"
           type="text"
-          value="{{system.fate.value}}"
+          value="{{system.stats.fate.value}}"
           placeholder="0"
           data-dtype="Number"
           maxlength="3"
@@ -224,9 +224,9 @@
       <div class="attr-inputs flexcolumn grid-span-2">
         <input
           class="attr-mod-input"
-          name="system.attributes.str.mod"
+          name="system.stats.base.str.mod"
           type="text"
-          value="{{system.attributes.str.mod}}"
+          value="{{system.stats.base.str.mod}}"
           placeholder="0"
           data-dtype="Number"
           maxlength="2"
@@ -235,9 +235,9 @@
         <input
           class="attr-input"
           id="str-value"
-          name="system.attributes.str.value"
+          name="system.stats.base.str.class"
           type="text"
-          value="{{system.attributes.str.value}}"
+          value="{{system.stats.base.str.class}}"
           placeholder="0"
           data-dtype="Number"
           data-label="str"

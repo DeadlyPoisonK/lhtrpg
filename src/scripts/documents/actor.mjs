@@ -204,8 +204,8 @@ export class LHTrpgActor extends Actor {
       }
     }
 
-    if (system.battleStatus.power) {
-      for (let [k, v] of Object.entries(system.battleStatus.power)) {
+    if (system.power) {
+      for (let [k, v] of Object.entries(system.power)) {
         system[k] = foundry.utils.deepClone(v);
       }
     }

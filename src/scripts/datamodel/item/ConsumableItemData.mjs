@@ -4,7 +4,7 @@ import { makeIntegerField } from "../common.mjs";
 
 const { fields } = foundry.data;
 
-export class ConsumableItemData extends SkillItemData {
+export default class ConsumableItemData extends SkillItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),

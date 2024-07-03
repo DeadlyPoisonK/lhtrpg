@@ -4,7 +4,7 @@ import { makeIntegerField, makeBooleanField } from "../common.mjs";
 
 const { fields } = foundry.data;
 
-export class StatsItemData extends CommonItemData {
+export default class StatsItemData extends CommonItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),

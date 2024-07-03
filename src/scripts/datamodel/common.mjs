@@ -26,7 +26,7 @@ export function makeIntegerField(initial) {
 
 export function makePositiveIntegerField(initial) {
   return makeNumberField({
-    initial,
+    initial: initial,
     positive: true,
   });
 }
