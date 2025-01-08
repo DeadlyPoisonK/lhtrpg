@@ -1,0 +1,9 @@
+{
+    "name": "LHTRPG.Class.Guardian",
+    "str": 4,
+    "dex": 2,
+    "pow": 1,
+    "int": 3,
+    "hp": 50,
+    "hpm": 8
+}

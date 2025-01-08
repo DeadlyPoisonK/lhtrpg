@@ -1,0 +1,9 @@
+{
+    "name": "LHTRPG.Class.Cleric",
+    "str": 3,
+    "dex": 0,
+    "pow": 4,
+    "int": 3,
+    "hp": 40,
+    "hpm": 6
+}

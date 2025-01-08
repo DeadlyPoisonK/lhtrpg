@@ -1,0 +1,73 @@
+<form class="lhtrpg" autocomplete="off">
+	<div class="lhtrpg-card">
+		<header class="sheet-header">
+			<div class="grid grid-card">
+				<div class="card-img-border">
+					<img class="card-img" src="{{img}}" data-edit="img" title="{{item.name}}" />
+				</div>
+				<h1 class="card-name">
+					<span name="name" type="text" value="{{name}}" placeholder="Name">{{name}}</span>
+				</h1>
+			</div>
+		</header>
+
+		<section class="sheet-stats card-grid1">
+			<div class="card-div tags">
+				{{#each system.tags as |tag|}}
+					<span>{{tag}}</span>
+				{{/each}}
+			</div>
+		</section>
+
+		<section class="sheet-stats card-grid1">
+			<div class="card-div">
+				<label>{{localize 'LHTRPG.Skill.Label.Check'}}</label>
+				<input class="card-input" type="text" name="system.checkType" value="{{system.checkType}}"
+					placeholder="{{localize 'LHTRPG.Skill.Placeholder.Check'}}" data-dtype="text" disabled>
+			</div>
+		</section>
+
+		<section class="sheet-stats card-grid">
+			<div class="card-div">
+				<label>{{localize 'LHTRPG.Skill.Label.SR'}}</label>
+				<span class="card-input">{{system.skillRank.value}}/{{system.skillRank.max}}</span>
+			</div>
+
+			<div class="card-div">
+				<label>{{localize 'LHTRPG.Skill.Label.Timing'}}</label>
+				<span class="card-input">{{system.timing}}</span>
+			</div>
+
+			<div class="card-div">
+				<label>{{localize 'LHTRPG.Skill.Label.Target'}}</label>
+				<span class="card-input">{{system.target}}</span>
+			</div>
+
+			<div class="card-div">
+				<label>{{localize 'LHTRPG.Skill.Label.Range'}}</label>
+				<span class="card-input">{{system.range}}</span>
+			</div>
+
+			<div class="card-div">
+				<label>{{localize 'LHTRPG.Skill.Label.Cost'}}</label>
+				<span class="card-input">{{system.cost}}</span>
+			</div>
+
+			<div class="card-div">
+				<label>{{localize 'LHTRPG.Skill.Label.Limit'}}</label>
+				<span class="card-input">{{system.limit}}</span>
+			</div>
+		</section>
+
+
+		<section class="sheet-stats card-grid1">
+			<div class="card-div">
+				<label>{{localize 'LHTRPG.Description.Label'}}</label>
+				<footer class="card-description" name="description" type="text" value="{{system.description}}"
+					placeholder="" readonly>
+					{{{system.description}}}
+				</footer>
+			</div>
+		</section>
+	</div>
+</form>

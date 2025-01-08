@@ -1,0 +1,9 @@
+{   
+    "name": "LHTRPG.Class.Bard",
+    "str": 2,
+    "dex": 4,
+    "pow": 2,
+    "int": 2,
+    "hp": 40,
+    "hpm": 5
+}

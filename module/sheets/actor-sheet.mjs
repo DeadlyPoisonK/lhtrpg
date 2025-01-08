@@ -35,7 +35,7 @@ export class LHTrpgActorSheet extends ActorSheet {
     // Retrieve the data structure from the base sheet. You can inspect or log
     // the context variable to see the structure, but some key properties for
     // sheets are the actor object, the data object, whether or not it's
-    // editable, the items array, and the effects array.
+    // editable, the items array, and the effects array.    
     const context = super.getData();
 
     // Use a safe clone of the actor data for further operations.
@@ -43,6 +43,9 @@ export class LHTrpgActorSheet extends ActorSheet {
 
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = actorData.system;
+    
+    context.optionJobs = CONFIG.LHTRPG.JobNames;
+    context.optionRaces = CONFIG.LHTRPG.RaceNames;
     context.flags = actorData.flags;
 
     // Prepare character data and items.
@@ -209,6 +212,9 @@ export class LHTrpgActorSheet extends ActorSheet {
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
+
+    html.find('.item-throw').click(this._onItemThrow.bind(this));
+
 
     // Render the item sheet for viewing/editing prior to the editable check.
     html.find('.item-edit').click(ev => {
@@ -415,6 +421,14 @@ export class LHTrpgActorSheet extends ActorSheet {
     return roll;
 
   }
+
+  _onItemThrow(event) {
+    event.preventDefault();
+    const itemId = event.currentTarget.closest(".item").dataset.itemId;
+    const item = this.actor.items.get(itemId);
+
+    item.ItemThrow();
+}
 
   // async _onOpeningInfoWindow (state, actor) {
   //   console.log(state);

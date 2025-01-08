@@ -1,0 +1,9 @@
+{
+    "name": "LHTRPG.Class.Assassin",
+    "str": 1,
+    "dex": 4,
+    "pow": 3,
+    "int": 1,
+    "hp": 40,
+    "hpm": 5
+}

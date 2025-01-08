@@ -12,7 +12,7 @@
 					value="{{system.health.value}}" placeholder="0" data-dtype="Number" maxlength="3">
 				<span>/</span>
 				<input class="hp-input max" type="text" name="system.health.max"
-					value="{{system.health.max}}" placeholder="0" data-dtype="Number" maxlength="3">
+					value="{{system.health.max}}" placeholder="0" data-dtype="Number" maxlength="3" disabled>
 			</div>
 		</div>
 		<div class="fate flex grid-span-3">
@@ -22,7 +22,7 @@
 					placeholder="0" data-dtype="Number" maxlength="3">
 				<span>/</span>
 				<input class="fate-input" type="text" name="system.fate.max" value="{{system.fate.max}}"
-					placeholder="0" data-dtype="Number" maxlength="3">
+					placeholder="0" data-dtype="Number" maxlength="3" disabled>
 			</div>
 		</div>
 
@@ -96,6 +96,9 @@
 				<input class="attr-mod-input" type="text" name="system.attributes.str.mod"
 					value="{{system.attributes.str.mod}}" placeholder="0" data-dtype="Number"
 					maxlength="2" disabled>
+				<input class="attr-input" id="str-total" data-label="str.total" type="text"
+					name="system.attributes.str.total" value="{{system.attributes.str.total}}"
+					placeholder="0" data-dtype="Number" maxlength="2" disabled>
 				<input class="attr-input" id="str-value" data-label="str" type="text"
 					name="system.attributes.str.value" value="{{system.attributes.str.value}}"
 					placeholder="0" data-dtype="Number" maxlength="2">
@@ -134,6 +137,9 @@
 				<input class="attr-mod-input" type="text" name="system.attributes.dex.mod"
 					value="{{system.attributes.dex.mod}}" placeholder="0" data-dtype="Number"
 					maxlength="2" disabled>
+				<input class="attr-input" id="dex-total" data-label="dex.total" type="text"
+					name="system.attributes.dex.total" value="{{system.attributes.dex.total}}"
+					placeholder="0" data-dtype="Number" maxlength="2" disabled>
 				<input class="attr-input" id="dex-value" data-label="dex" type="text"
 					name="system.attributes.dex.value" value="{{system.attributes.dex.value}}"
 					placeholder="0" data-dtype="Number" maxlength="2">
@@ -172,6 +178,9 @@
 				<input class="attr-mod-input" type="text" name="system.attributes.pow.mod"
 					value="{{system.attributes.pow.mod}}" placeholder="0" data-dtype="Number"
 					maxlength="2" disabled>
+				<input class="attr-input" id="pow-total" data-label="pow.total" type="text"
+					name="system.attributes.pow.total" value="{{system.attributes.pow.total}}"
+					placeholder="0" data-dtype="Number" maxlength="2" disabled>
 				<input class="attr-input" id="pow-value" data-label="pow" type="text"
 					name="system.attributes.pow.value" value="{{system.attributes.pow.value}}"
 					placeholder="0" data-dtype="Number" maxlength="2">
@@ -210,6 +219,9 @@
 				<input class="attr-mod-input" type="text" name="system.attributes.int.mod"
 					value="{{system.attributes.int.mod}}" placeholder="0" data-dtype="Number"
 					maxlength="2" disabled>
+				<input class="attr-input" id="int-total" data-label="int.total" type="text"
+					name="system.attributes.int.total" value="{{system.attributes.int.total}}"
+					placeholder="0" data-dtype="Number" maxlength="2" disabled>
 				<input class="attr-input" id="int-value" data-label="int" type="text"
 					name="system.attributes.int.value" value="{{system.attributes.int.value}}"
 					placeholder="0" data-dtype="Number" maxlength="2">
@@ -246,7 +258,7 @@
 
 		<div class="grid-span-8 flexrow">
 			<div class="check flexcolumn grid-span-2 rollableSkill" data-name="Accuracy" data-dice="{{system.checks.accuracy.dice}}" data-bonus="{{system.checks.accuracy.total}}">
-				<h4>{{localize 'LHTRPG.Check.Accuracy'}}</h4>
+				<h4 style="margin-top: 10px;">{{localize 'LHTRPG.Check.Accuracy'}}</h4>
 				<div class="flexrow">
 					<input class="attr-input" type="text" name="system.checks.accuracy.total"
 						value="{{system.checks.accuracy.total}}" placeholder="0" data-dtype="Number"
@@ -259,7 +271,7 @@
 				</div>
 			</div>
 			<div class="check flexcolumn grid-span-2 rollableSkill" data-name="Evasion" data-dice="{{system.checks.evasion.dice}}" data-bonus="{{system.checks.evasion.total}}">
-				<h4>{{localize 'LHTRPG.Check.Evasion'}}</h4>
+				<h4 style="margin-top: 10px;">{{localize 'LHTRPG.Check.Evasion'}}</h4>
 				<div class="flexrow">
 					<input class="attr-input" type="text" name="system.checks.evasion.total"
 						value="{{system.checks.evasion.total}}" placeholder="0" data-dtype="Number"
@@ -272,7 +284,7 @@
 				</div>
 			</div>
 			<div class="check flexcolumn grid-span-2 rollableSkill" data-name="Resistance" data-dice="{{system.checks.resistance.dice}}" data-bonus="{{system.checks.resistance.total}}">
-				<h4>{{localize 'LHTRPG.Check.Resistance'}}</h4>
+				<h4 style="margin-top: 10px;">{{localize 'LHTRPG.Check.Resistance'}}</h4>
 				<div class="flexrow">
 					<input class="attr-input" type="text" name="system.checks.resistance.total"
 						value="{{system.checks.resistance.total}}" placeholder="0"

@@ -64,6 +64,14 @@
   grid-template-columns: repeat(14, minmax(0, 1fr));
 }
 
+.grid-card {
+    display: grid;
+    grid-column: span 2 / span 2;
+    grid-template-columns: auto 1fr;
+    margin: 10px 0;
+    padding: 0;
+  }
+
 // Grid offset.
 .grid-start-2 { grid-column-start: 2 }
 .grid-start-3 { grid-column-start: 3 }

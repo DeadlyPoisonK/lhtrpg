@@ -27,3 +27,8 @@ HMMMMMMMHo                 'MMMMMMMMMT       .
               ''--._,dd###pp=""'
 
 `;
+
+LHTRPG.Jobs = {};
+LHTRPG.JobNames = {};
+LHTRPG.Races = {};
+LHTRPG.RaceNames = {};

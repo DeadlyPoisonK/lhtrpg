@@ -1,0 +1,9 @@
+{
+    "name": "LHTRPG.Class.Summoner",
+    "str": 1,
+    "dex": 3,
+    "pow": 3,
+    "int": 4,
+    "hp": 35,
+    "hpm": 5
+}

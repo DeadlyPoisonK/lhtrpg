@@ -1,0 +1,9 @@
+{
+    "name": "LHTRPG.Class.Druid",
+    "str": 2,
+    "dex": 1,
+    "pow": 4,
+    "int": 3,
+    "hp": 35,
+    "hpm": 6
+}

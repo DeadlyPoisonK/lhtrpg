@@ -103,6 +103,8 @@ export class LHTrpgActorMonsterSheet extends ActorSheet {
     /** @override */
     activateListeners(html) {
         super.activateListeners(html);
+        
+        html.find('.item-throw').click(this._onItemThrow.bind(this));
 
         // Render the item sheet for viewing/editing prior to the editable check.
         html.find('.item-edit').click(ev => {
@@ -220,6 +222,17 @@ export class LHTrpgActorMonsterSheet extends ActorSheet {
             return roll;
         }
     }
+
+    _onItemThrow(event) {
+        event.preventDefault();
+        const itemId = event.currentTarget.closest(".item").dataset.itemId;
+        console.log(itemId);
+        const item = this.actor.items.get(itemId);
+        console.log(item);
+    
+        item.ItemThrow();
+    
+      }
 
     // async _onOpeningInfoWindow (state, actor) {
     //   console.log(state);

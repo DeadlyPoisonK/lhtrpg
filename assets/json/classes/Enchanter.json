@@ -1,0 +1,9 @@
+{
+    "name": "LHTRPG.Class.Enchanter",
+    "str": 2,
+    "dex": 2,
+    "pow": 2,
+    "int": 4,
+    "hp": 35,
+    "hpm": 4
+}

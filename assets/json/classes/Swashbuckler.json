@@ -1,0 +1,9 @@
+{
+    "name": "LHTRPG.Class.Swashbuckler",
+    "str": 3,
+    "dex": 4,
+    "pow": 2,
+    "int": 1,
+    "hp": 40,
+    "hpm": 6
+}

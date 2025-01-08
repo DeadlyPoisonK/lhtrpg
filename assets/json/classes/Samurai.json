@@ -1,0 +1,9 @@
+{
+    "name": "LHTRPG.Class.Samurai",
+    "str": 4,
+    "dex": 2,
+    "pow": 2,
+    "int": 2,
+    "hp": 50,
+    "hpm": 8
+}

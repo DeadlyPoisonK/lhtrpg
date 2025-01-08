@@ -45,7 +45,7 @@ async function _onTagCreate(owner, tags) {
 
           owner.update(
             {
-              "data.tags": tags
+              "system.tags": tags
             }
           );
         }
@@ -65,7 +65,7 @@ async function _onTagDelete(owner, tags, id) {
   tags.splice(id, 1);
   await owner.update(
     {
-      "data.tags": tags
+      "system.tags": tags
     }
   );
 }

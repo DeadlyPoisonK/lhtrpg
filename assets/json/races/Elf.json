@@ -1,0 +1,9 @@
+{
+    "name": "LHTRPG.Race.Elf",
+    "str": 0,
+    "dex": 1,
+    "pow": 1,
+    "int": 0,
+    "hp": 8,
+    "fate": 1
+}

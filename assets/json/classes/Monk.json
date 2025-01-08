@@ -1,0 +1,9 @@
+{
+    "name": "LHTRPG.Class.Monk",
+    "str": 4,
+    "dex": 4,
+    "pow": 2,
+    "int": 0,
+    "hp": 55,
+    "hpm": 9
+}
