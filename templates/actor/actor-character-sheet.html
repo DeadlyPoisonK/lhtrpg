@@ -94,6 +94,7 @@
 				{{!-- Default tab is specified in actor-sheet.mjs --}}
 				<a class="item" data-tab="status">{{toUpperCase (localize 'LHTRPG.Status.Label')}}</a>
 				<a class="item" data-tab="effects">{{toUpperCase (localize 'LHTRPG.Effect.Label')}}</a>
+				<a class="item" data-tab="others">{{toUpperCase (localize 'LHTRPG.Others.Label')}}</a>
 			</nav>
 			<section class="status-body">
 				<div class="tab status" data-group="stats" data-tab="status">
@@ -102,9 +103,12 @@
 				<div class="tab effects" data-group="stats" data-tab="effects">
 					{{> "systems/lhtrpg/templates/actor/parts/actor-effects.html"}}
 				</div>
-
+				<div class="tab others" data-group="stats" data-tab="others">
+					{{> "systems/lhtrpg/templates/actor/parts/actor-others.html"}}
+				</div>
 			</section>
 		</div>
+
 
 		{{!-- Skills Tab --}}
 		<div class="tab stats grid-span-6" data-group="primary" data-tab="skills">

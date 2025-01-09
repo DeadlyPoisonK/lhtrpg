@@ -100,7 +100,7 @@
       "Hate": "HATE",
       "ImportItems": "Import Items from lhrpg.com",
       "ImportSkills": "Import Skills from lhrpg.com",
-      "Overconfident": "Reckless",
+      "Overconfident": "Overconfident",
       "Power": "Offense",
       "Pursuit": "Pursuit",
       "Race": "Race",
@@ -108,7 +108,18 @@
       "Rigor": "Rigor",
       "Staggered": "Staggered",
       "Tags": "Tags",
-      "Type": "Type"
+      "Type": "Type",
+      "afflicted": "Afflicted",
+      "barrier": "Barrier",
+      "cancel": "Cancel",
+      "confused": "Confused",
+      "dazed": "Dazed",
+      "decay": "Decay",
+      "overconfident": "Overconfident",
+      "pursuit": "Pursuit",
+      "regen": "Regen",
+      "rigor": "Rigor",
+      "staggered": "Staggered"
     },
     "Modifier": "Modifier",
     "Monster": {
@@ -158,6 +169,9 @@
     "Status": {
       "Label": "Status"
     },
+    "Others": {
+      "Label": "Others"
+    },
     "Str": "STR",
     "Tooltip": {
       "AttackPower": "Attack Power",
@@ -165,7 +179,7 @@
       "MagicDefense": "Magic defense",
       "MagicPower": "Magic Power",
       "PhysDefense": "Physical Defense",
-      "RestorationPower": "Restoration Power",
+      "RestorationPower": "Recovery Power",
       "Speed": "Speed"
     },
     "Union": {
