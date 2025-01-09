@@ -4,6 +4,19 @@
  */
 export class LHTrpgItem extends Item {
 
+  
+  chatTemplate = {
+    "skill": "systems/lhtrpg/templates/dialogs/skillThrow.hbs",
+    "weapon": "system/lhtrpg/templates/item/item-weapon-sheet.html",
+    "armor": "system/lhtrpg/templates/item/item-armor-sheet.html",
+    "shield": "system/lhtrpg/templates/item/item-shield-sheet.html",
+    "accessory": "system/lhtrpg/templates/item/item-accessory-sheet.html",  
+    "bag": "system/lhtrpg/templates/item/item-bag-sheet.html",
+    "gear": "system/lhtrpg/templates/item/item-gear-sheet.html",
+    "valuable": "system/lhtrpg/templates/item/item-valuable-sheet.html",
+    "connection": "system/lhtrpg/templates/item/item-connection-sheet.html",
+    "union": "system/lhtrpg/templates/item/item-union-sheet.html",  
+    }
 
   /**
  * Should this item's active effects be suppressed.
@@ -93,4 +106,37 @@ export class LHTrpgItem extends Item {
       return roll;
     }
   }
+
+  async ItemThrow(event) {
+    const element = this;
+    const system = element.system;
+    const macroId = system.macroeffect; // Asumiendo que esto es directamente el ID de la macro
+
+    if (macroId) {
+        // Encuentra la macro por su ID
+        const macro = game.macros.get(macroId);
+        if (macro) {
+            // Ejecuta la macro
+            macro.execute();
+        } else {
+        }
+    } else {
+    }
+
+    let chatData = {
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker(),
+    };
+
+    let cardData = {
+        ...element.toObject(),
+        owner: element.actor.id
+    };
+
+    // Renderizar la plantilla del chat
+    chatData.content = await renderTemplate(this.chatTemplate[element.type], cardData);
+    chatData.roll = true;
+    console.log(chatData);
+    return ChatMessage.create(chatData);
+}
 }

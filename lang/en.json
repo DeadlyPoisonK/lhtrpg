@@ -133,6 +133,7 @@
         "Check": "Check",
         "Cost": "Cost",
         "Limit": "Limit",
+        "MacroEffect":"Macro",
         "Range": "Range",
         "SR": "SR",
         "Target": "Target",
@@ -142,6 +143,7 @@
         "Check": "-",
         "Cost": "-",
         "Limit": "-",
+        "MacroEffect": "-",
         "Range": "-",
         "Target": "-",
         "Timing": "-"
